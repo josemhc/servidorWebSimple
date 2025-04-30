@@ -10,6 +10,15 @@ app.get('/', (req, res) => {
 }
 );
 
+app.get('/status', (req, res) => {
+  res.json({
+    service: 'API Azure',
+    status: 'Running',
+    timestamp: new Date().toISOString()
+  });
+});
+
+
 app.listen(PORT, () => {
   console.log(`Server is running at http://${HOST}:${PORT}`);
 }
